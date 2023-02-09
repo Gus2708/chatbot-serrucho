@@ -1,0 +1,233 @@
+[
+    {
+    "id": 1,
+    "name": "Destornillador Estria pequeño",
+    "price": 1.00,
+    "qty": 5,
+    "brand": "Black & Decker"
+    },
+    {
+    "id": 2,
+    "name": "Destornillador Estria grande",
+    "price": 2.00,
+    "qty": 5,
+    "brand": "Stanley"
+    },
+    {
+    "id": 3,
+    "name": "Destornillador paleta pequeño",
+    "price": 1.00,
+    "qty": 0,
+    "brand": "Bosch"
+    },
+    {
+    "id": 4,
+    "name": "Destornillador paleta grande",
+    "price": 2.00,
+    "qty": 5,
+    "brand": "Makita"
+    },
+    {
+    "id": 5,
+    "name": "Alicate",
+    "price": 3.00,
+    "qty": 3.50,
+    "brand": "Klein Tools"
+    },
+    {
+    "id": 6,
+    "name": "Taladro",
+    "price": 25.00,
+    "qty": 2,
+    "brand": "DeWalt"
+    },
+    {
+    "id": 7,
+    "name": "Martillo",
+    "price": 5.00,
+    "qty": 3,
+    "brand": "Estwing"
+    },
+    {
+    "id": 8,
+    "name": "Tornillo",
+    "price": 0.15,
+    "qty": 15,
+    "brand": "Hillman"
+    },
+    {
+    "id": 9,
+    "name": "Clavo",
+    "price": 0.15,
+    "qty": 15,
+    "brand": "Paslode"
+    },
+    {
+    "id": 10,
+    "name": "Bombilla",
+    "price": 3,
+    "qty": 15,
+    "brand": "Philips"
+    },
+    {
+    "id": 11,
+    "name": "Cable",
+    "price": 0.15,
+    "qty": 15,
+    "brand": "Southwire"
+    },
+    {
+    "id": 12,
+    "name": "Clavo grande",
+    "price": 0.25,
+    "qty": 15,
+    "brand": "Spiral"
+    },
+    {
+    "id": 13,
+    "name": "Clavo pequeño",
+    "price": 0.15,
+    "qty": 15,
+    "brand": "Simpson Strong-Tie"
+    },
+    {
+    "id": 14,
+    "name": "Alicate pequeño",
+    "price": 0.15,
+    "qty": 15,
+    "brand": "Channellock"
+    },
+    {
+        "id": 15,
+        "name": "Taladro de mano",
+        "price": 20.00,
+        "qty": 5,
+        "brand": "DeWalt"
+    },
+    {
+    "id": 16,
+    "name": "Llave inglesa",
+    "price": 10.00,
+    "qty": 10,
+    "brand": "Stanley"
+    },
+    {
+    "id": 17,
+    "name": "Sierra de mano",
+    "price": 15.00,
+    "qty": 8,
+    "brand": "Bosch"
+  },
+  {
+    "id": 18,
+    "name": "Martillo de uñas",
+    "price": 5.00,
+    "qty": 12,
+    "brand": "Craftsman"
+  },
+  {
+    "id": 19,
+    "name": "Pinza universal",
+    "price": 8.00,
+    "qty": 7,
+    "brand": "Klein Tools"
+  },
+  {
+    "id": 20,
+    "name": "Cinta métrica",
+    "price": 7.00,
+    "qty": 5,
+    "brand": "Stanley"
+  },
+  {
+    "id": 21,
+    "name": "Llave ajustable",
+    "price": 8.00,
+    "qty": 9,
+    "brand": "Craftsman"
+  },
+  {
+    "id": 22,
+    "name": "Desarmador Phillips",
+    "price": 2.00,
+    "qty": 20,
+    "brand": "DeWalt"
+  },
+  {
+    "id": 23,
+    "name": "Desarmador plano",
+    "price": 2.00,
+    "qty": 20,
+    "brand": "Klein Tools"
+  },
+  {
+    "id": 24,
+    "name": "Serrucho",
+    "price": 12.00,
+    "qty": 7,
+    "brand": "Bosch"
+  },
+  {
+    "id": 16,
+    "name": "Llave inglesa",
+    "price": 10.00,
+    "qty": 10,
+    "brand": "Stanley"
+  },
+  {
+    "id": 17,
+    "name": "Sierra de mano",
+    "price": 15.00,
+    "qty": 8,
+    "brand": "Bosch"
+  },
+  {
+    "id": 18,
+    "name": "Martillo pequeño",
+    "price": 5.00,
+    "qty": 12,
+    "brand": "Craftsman"
+  },
+  {
+    "id": 19,
+    "name": "Pinza universal",
+    "price": 8.00,
+    "qty": 7,
+    "brand": "Klein Tools"
+  },
+  {
+    "id": 20,
+    "name": "Cinta métrica",
+    "price": 7.00,
+    "qty": 5,
+    "brand": "Stanley"
+  },
+  {
+    "id": 21,
+    "name": "Llave ajustable",
+    "price": 8.00,
+    "qty": 9,
+    "brand": "Craftsman"
+  },
+  {
+    "id": 22,
+    "name": "Desarmador Phillips grande",
+    "price": 2.00,
+    "qty": 20,
+    "brand": "DeWalt"
+  },
+  {
+    "id": 23,
+    "name": "Desarmador plano grande",
+    "price": 2.00,
+    "qty": 20,
+    "brand": "Klein Tools"
+  },
+  {
+    "id": 24,
+    "name": "Serrucho",
+    "price": 12.00,
+    "qty": 7,
+    "brand": "Bosch"
+  }
+]
