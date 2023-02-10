@@ -8,7 +8,7 @@ const {
 
 const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
-const MongoAdapter = require('@bot-whatsapp/database/mongo');
+const MongoAdapter = require('@bot-whatsapp/database/mock');
 const Fuse = require('fuse.js');
 const { extensionForMediaMessage } = require('@adiwajshing/baileys');
 
@@ -106,34 +106,32 @@ const returnFlow = addKeyword(['❌Cancelar búsqueda❌', 'Quiero hacer otra pr
    buttons: [
        {body: '❌Cancelar búsqueda❌'}
    ]
- }, async (ctx, {flowDynamic, endFlow}) => {
-   if (ctx.body == "❌Cancelar búsqueda❌"){
-  
-   };
+ }, async (ctx, {flowDynamic, endFlow, fallBack}) => {
    
    const data = await productData();
    const search = await ctx.body;
    const fuse = new Fuse(data, options);
    let matches = fuse.search(search);
+ 
+   if (ctx.body !== '❌Cancelar búsqueda❌'){
 
-   
+      matches.map(match => { 
+          available = '❌'
+          if (match.item.qty > 0){
+              available = '✅'
+          };
+          
+          flowDynamic([{
+              body: `*${match.item.name}* \n*Precio:* ${match.item.price}$\n*Marca:* ${match.item.brand} \n*Disponibilidad:* ${available}`
+          }]);
+      });
+  }
+  else{
+    return fallBack('Búsqueda cancelada con el botón ⬇', null) 
+  }
 
-   matches.map(match => { 
-       available = '❌'
-       if (match.item.qty > 0){
-           available = '✅'
-       };
-       
-       flowDynamic([{
-           body: `*${match.item.name}* \n*Precio:* ${match.item.price}$\n*Marca:* ${match.item.brand} \n*Disponibilidad:* ${available}`
-       }]);
-       flag = true
-   });
-
-   const matchesResult = await matches.map( match => { return match });
-   console.log(await matchesResult);
-
- }).addAnswer(['Si estás interesado en algún producto escríbenos y pronto unos de nuestros trabajadores estará ayudándote en tu compra. 😉',
+})
+ .addAnswer(['Si estás interesado en algún producto escríbenos y pronto unos de nuestros trabajadores estará ayudándote en tu compra. 😉',
               '\n*Ejemplo:* Quiero comprar el destornillador de estria grande.'],
   {
     capture: true,
@@ -163,7 +161,9 @@ const mainFlow = addKeyword(['hola', 'ole', 'alo', 'jola', 'buenos días', 'buen
             { body: 'Contactar con trabajador 👩‍💻' },   
             { body: 'Donde ubicarnos 📍' },
         ]
-     });
+     }, (ctx, {flowDynamic}) => {
+
+     }, [productFlow]);
 
 const main = async () => {
     const adapterDB = new MongoAdapter({
