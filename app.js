@@ -10,7 +10,7 @@ const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 const MongoAdapter = require('@bot-whatsapp/database/mock');
 const Fuse = require('fuse.js');
-const { extensionForMediaMessage } = require('@adiwajshing/baileys');
+const { extensionForMediaMessage, delay } = require('@adiwajshing/baileys');
 
 /**
  * Declaramos las conexiones de Mongo
@@ -19,7 +19,8 @@ const MONGO_DB_URI = 'mongodb+srv://gusdev27:27082002gr@chatbot.40apnuo.mongodb.
 const MONGO_DB_NAME = 'db_bot'
 
 const pass = () => {
-  console.log('');
+  delay(100)
+  console.log('pass');
 };
 
 const productData = async () => {
@@ -112,10 +113,11 @@ const returnFlow = addKeyword(['❌Cancelar búsqueda❌', 'Quiero hacer otra pr
    const search = await ctx.body;
    const fuse = new Fuse(data, options);
    let matches = fuse.search(search);
+   flag = false
  
    if (ctx.body !== '❌Cancelar búsqueda❌'){
 
-      matches.map(match => { 
+    await  matches.map(match => { 
           available = '❌'
           if (match.item.qty > 0){
               available = '✅'
@@ -125,30 +127,33 @@ const returnFlow = addKeyword(['❌Cancelar búsqueda❌', 'Quiero hacer otra pr
               body: `*${match.item.name}* \n*Precio:* ${match.item.price}$\n*Marca:* ${match.item.brand} \n*Disponibilidad:* ${available}`
           }]);
       });
+      flag = true
   }
   else{
     return fallBack('Búsqueda cancelada con el botón ⬇', null) 
-  }
+  };
 
-})
- .addAnswer(['Si estás interesado en algún producto escríbenos y pronto unos de nuestros trabajadores estará ayudándote en tu compra. 😉',
-              '\n*Ejemplo:* Quiero comprar el destornillador de estria grande.'],
+if (flag == true){
+  pass()
+} else{
+  return fallBack(`No se en contro nigun producto con el nombre o marca ${search}`);
+}
+
+flowDynamic([{
+  body :`Si estás interesado en algún producto escríbenos y pronto unos de nuestros trabajadores estará ayudándote en tu compra. 😉',
+  '\n*Ejemplo:* Quiero comprar el destornillador de estria grande.`,
+  buttons: [
+    {
+    body: 'Seguir buscando 🔎'
+  },
   {
-    capture: true,
-    buttons: [{
-      body: 'Seguir buscando 🔎'
-    }],
-    delay: 500
- }, (ctx, { flowDynamic }) => {
-    if(ctx.body !== 'Seguir buscando 🔎'){
-      flowDynamic([{
-        body: '*¡Gracias por preferirnos!* 😁 \n\nPronto uno de nuestros trabajadores se estará contactando contigo para ayudarte en tu compra. 😉',
-        buttons: [{
-          body: 'Quiero hacer otra pregunta'
-        }]
-      }]);
-    };
- });
+    body:  'Quiero hacer otra pregunta'
+  }
+]
+}
+])
+
+});
 
 
 const mainFlow = addKeyword(['hola', 'ole', 'alo', 'jola', 'buenos días', 'buenos dias', 'buenas noches', 'buenas tardes', 'hila', 'hol', 'hil', 'ola', 'ila', 'buenos dis'])

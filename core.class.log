@@ -1,0 +1,86 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '584146571788@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0E000C09C6E26254A',
+    participant: undefined
+  },
+  messageTimestamp: 1676062210,
+  pushName: 'Gustavo Reyes',
+  message: Message {
+    conversation: 'hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'hola',
+  from: '584146571788'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '584146571788@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB03C2421D318F4110C',
+    participant: undefined
+  },
+  messageTimestamp: 1676062213,
+  pushName: 'Gustavo Reyes',
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-0',
+      selectedDisplayText: 'Preguntar por un producto 🔎',
+      contextInfo: [ContextInfo],
+      type: 1
+    }
+  },
+  body: 'Preguntar por un producto 🔎',
+  from: '584146571788'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '584146571788@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0393D94AAC862BB25',
+    participant: undefined
+  },
+  messageTimestamp: 1676062216,
+  pushName: 'Gustavo Reyes',
+  message: Message {
+    conversation: 'martillo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'martillo',
+  from: '584146571788'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '584146571788@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0947BA272B54805C8',
+    participant: undefined
+  },
+  messageTimestamp: 1676062221,
+  pushName: 'Gustavo Reyes',
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-1',
+      selectedDisplayText: 'Quiero hacer otra pregunta',
+      contextInfo: [ContextInfo],
+      type: 1
+    }
+  },
+  body: 'Quiero hacer otra pregunta',
+  from: '584146571788'
+}
